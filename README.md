@@ -3,6 +3,7 @@
 A production-ready ASP.NET Core 8 Web API demonstrating clean architecture, RESTful design, Entity Framework Core, and mock third-party integration (Stripe) for a digital banking SPA.
 
 ## Features
+![BankFlow Dashboard](dashboard.png)
 - **Architecture**: N-Tier structure (Controllers, Services, Models, Data).
 - **Database**: Entity Framework Core with SQLite. Database is automatically seeded on startup for easy testing.
 - **Payment Processing**: Simulated Stripe payment service integration.
