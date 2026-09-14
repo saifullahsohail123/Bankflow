@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankFlow - Digital Banking Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h2>BankFlow</h2>
+            </div>
+            <nav class="menu">
+                <a href="#" class="menu-item active">
+                    <span class="icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="icon">💸</span>
+                    Transactions
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="icon">💳</span>
+                    Cards
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="icon">📈</span>
+                    Investments
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">SU</div>
+                <div class="user-info">
+                    <div class="name">Saif Ullah</div>
+                    <div class="role">Premium Account</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="search-bar">
+                    <span class="icon">🔍</span>
+                    <input type="text" placeholder="Search transactions, accounts...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn">🔔<span class="badge"></span></button>
+                    <button class="btn-primary">Transfer Funds</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="welcome-section">
+                    <h1>Good morning, Saif!</h1>
+                    <p>Here's what's happening with your accounts today.</p>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon balance-icon">💰</div>
+                        <div class="kpi-details">
+                            <div class="kpi-label">Total Balance</div>
+                            <div class="kpi-value" id="kpi-balance">$0.00</div>
+                            <div class="kpi-trend positive" id="kpi-trend">
+                                <span>↑</span> 0.0% this month
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon income-icon">⬇️</div>
+                        <div class="kpi-details">
+                            <div class="kpi-label">Monthly Income</div>
+                            <div class="kpi-value" id="kpi-income">$0.00</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon expense-icon">⬆️</div>
+                        <div class="kpi-details">
+                            <div class="kpi-label">Monthly Expenses</div>
+                            <div class="kpi-value" id="kpi-expenses">$0.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Chart Section -->
+                    <div class="chart-section panel">
+                        <div class="panel-header">
+                            <h3>Balance History</h3>
+                            <select class="date-select">
+                                <option>Last 7 Days</option>
+                                <option>Last 30 Days</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="balanceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Transactions Section -->
+                    <div class="transactions-section panel">
+                        <div class="panel-header">
+                            <h3>Recent Transactions</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="transaction-list" id="transaction-list">
+                            <!-- Transactions will be injected here -->
+                            <div class="loading">Loading transactions...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
